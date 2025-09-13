@@ -1,0 +1,296 @@
+/* ===== General ===== */
+* {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Mitr', sans-serif;
+  font-weight: 400;
+  margin: 0;
+  padding: 0;
+  text-align: center;
+  background-color: #ffffff;
+}
+
+/* ===== Top Bar ===== */
+.top-bar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 60px;              /* fixed height */
+  background-color: #092948;
+  color: white;
+  display: flex;
+  align-items: center;
+  z-index: 2000;
+}
+
+.top-bar-container {
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+  display: flex;
+  justify-content: space-between; /* left group vs right button */
+  align-items: center;
+  height: 100%;
+  font-size: 16px;
+}
+
+.top-bar-left {
+  display: flex;
+  align-items: center;
+  gap: 30px; /* spacing between phone / LINE / email */
+}
+
+.top-bar-right {
+  display: flex;
+  align-items: center;
+}
+
+/* Phone */
+.top-bar .phone-number {
+  display: flex;
+  align-items: center;
+}
+
+.top-bar .phone-number i {
+  margin-right: 10px;
+  font-size: 18px;
+}
+
+/* LINE */
+.top-bar .line-contact {
+  display: flex;
+  align-items: center;
+}
+
+.top-bar .line-contact .line-logo {
+  width: 22px;
+  height: 22px;
+  margin-right: 8px;
+}
+
+/* Email */
+.top-bar .email-contact {
+  display: flex;
+  align-items: center;
+  font-size: 16px;
+  color: white;
+}
+
+.top-bar .email-contact i {
+  margin-right: 8px;
+  font-size: 18px;
+}
+
+/* Language Switch Button */
+.lang-switch {
+  background: transparent;
+  border: 1px solid white;
+  color: white;
+  font-size: 14px;
+  padding: 4px 10px;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+
+.lang-switch:hover {
+  background: rgba(255, 255, 255, 0.2);
+}
+
+/* ===== Navbar ===== */
+nav {
+  position: fixed;
+  top: 60px; /* push below top bar */
+  left: 0;
+  width: 100%;
+  height: 100px; /* slightly taller navbar */
+  background-color: #f3f0e8;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+  padding: 0;
+}
+
+.nav-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  max-width: 1200px;
+  padding: 0 20px;
+}
+
+.nav-container img {
+  height: 60px;           /* bigger logo */
+  border-radius: 8px;     /* less pointy */
+}
+
+.nav-links {
+  display: flex;
+  gap: 35px;              /* slightly more space */
+}
+
+.nav-links a {
+  text-decoration: none;
+  color: #092948;
+  font-size: 18px;        /* bigger text */
+  transition: color 0.3s;
+}
+
+.nav-links a:hover {
+  color: #7a5c3d;
+}
+
+.nav-links a.active {
+  text-decoration: underline;
+}
+
+/* Adjust content padding below navbar */
+.content {
+  padding-top: 160px; /* top bar 60px + navbar 100px */
+  margin-bottom: 40px;
+}
+
+
+/* ===== Slideshow ===== */
+.slideshow-container {
+  position: relative;
+  width: 100%;
+  margin: 0 auto;
+}
+
+.slides-wrapper {
+  position: relative;
+  width: 100%;
+  overflow: hidden;
+  padding-top: 56.25%; /* 16:9 ratio */
+}
+
+.slides-wrapper img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  opacity: 0;
+  transition: opacity 0.5s ease-in-out;
+}
+
+.slides-wrapper img.active {
+  opacity: 1;
+  z-index: 1;
+}
+
+.prev, .next {
+  cursor: pointer;
+  position: absolute;
+  top: 50%;
+  width: 40px;
+  height: 40px;
+  margin-top: -20px;
+  background-color: rgba(0,0,0,0.5);
+  color: white;
+  border: none;
+  border-radius: 50%;
+  font-size: 24px;
+  line-height: 40px;
+  text-align: center;
+  user-select: none;
+  z-index: 10;
+}
+
+.prev { left: 10px; }
+.next { right: 10px; }
+.prev:hover, .next:hover { background-color: rgba(0,0,0,0.8); }
+
+/* ===== Header under slideshow ===== */
+h2 {
+  margin-top: 20px;
+  font-size: 28px;
+  color: #092948;
+}
+
+/* ===== Catalog button ===== */
+.button-container {
+  text-align: center;
+  margin-top: 20px;
+}
+
+.catalog-button {
+  display: inline-block;
+  background-color: #092948;
+  color: white;
+  font-size: 1.5rem;
+  padding: 15px 40px;
+  border-radius: 10px;
+  text-decoration: none;
+  font-family: 'Mitr', sans-serif;
+  transition: background-color 0.3s ease;
+}
+
+.catalog-button:hover {
+  background-color: #0d3a63;
+}
+
+/* Sidebar text buttons */
+.text-button {
+  background: none;
+  border: none;
+  padding: 0;
+  margin: 0;
+  font-family: 'Mitr', sans-serif;
+  font-size: 16px;
+  color: #092948;   /* same as navbar text color */
+  cursor: pointer;
+  text-align: left;
+  transition: color 0.3s, text-decoration 0.3s;
+}
+
+/* Hover effect */
+.text-button:hover {
+  color: #7a5c3d;  /* optional hover color to match navbar hover */
+}
+
+/* Active button */
+.text-button.active {
+  text-decoration: underline;
+  font-weight: bold;
+  color: #7a5c3d; /* keep active color consistent with hover */
+}
+
+
+
+
+
+/* ===== Footer ===== */
+footer {
+  background-color: #1f252a;
+  color: white;
+  width: 100%;
+  padding: 15px 0;
+}
+
+.footer-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+.footer-container img {
+  height: 40px;
+  border-radius: 8px; 
+}
+
+.phone-number {
+  font-size: 16px;
+}

@@ -1,39 +1,99 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>My Test Page</title>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            padding: 0;
-            margin: 0;
-            text-align: center;
-            background-color: #d6f2fe;
-        }
-        header {
-            padding-top: 20px;
-        }
-        header img {
-            display: inline-block;
-        }
-        h1 {
-            color: blue;
-            margin-top: 20px;
-        }
-        .content {
-            padding: 50px;
-        }
-    </style>
+
+    <!-- Google Font: Mitr -->
+    <link href="https://fonts.googleapis.com/css2?family=Mitr:wght@400&display=swap" rel="stylesheet">
+
+    <!-- Font Awesome for icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+    <!-- External CSS -->
+    <link rel="stylesheet" href="style.css">
 </head>
+
 <body>
-    <header>
-        <img src="Content/title.png" alt="Title Image">
-    </header>
-    <div class="content">
-        <h1>Welcome to My Test Page</h1>
-        <p>If you see this, your website is working!</p>
+
+    <!-- Top Bar -->
+    <div class="top-bar">
+        <div class="top-bar-container">
+            <div class="top-bar-left">
+                <span class="phone-number">
+                    <i class="fas fa-phone"></i> 000-000-0000
+                </span>
+                <span class="line-contact">
+                    <img src="Content/line-logo.png" alt="LINE" class="line-logo">
+                    nappassions
+                </span>
+                <span class="email-contact">
+                    <i class="fas fa-envelope"></i> nappassions@gmail.com
+                </span>
+            </div>
+            <div class="top-bar-right">
+                <button class="lang-switch">TH / EN</button>
+            </div>
+        </div>
     </div>
+
+    <!-- Navbar -->
+    <nav>
+        <div class="nav-container">
+            <img src="Content/Logo.jpg" alt="Logo">
+            <div class="nav-links">
+                <a href="index.html" class="active">Home</a>
+                <a href="products.html">Products</a>
+                <a href="catalog.html">Catalog</a>
+                <a href="contact.html">Contact Us</a>
+            </div>
+        </div>
+    </nav>
+
+    <div class="content">
+        <!-- Slideshow -->
+        <div class="slideshow-container">
+            <div class="slides-wrapper" id="slides-wrapper">
+                <img src="Content/slide test 1.jpg" alt="Slide 1" class="active">
+                <img src="Content/slide test 2.jpg" alt="Slide 2">
+                <img src="Content/slide test 3.jpg" alt="Slide 3">
+            </div>
+            <button class="prev">&#10094;</button>
+            <button class="next">&#10095;</button>
+        </div>
+
+        <!-- Header under slideshow -->
+        <h2>ออกแบบ ผลิต จัดส่ง ครบ จบ ที่เดียว</h2>
+        <h3>ข้อจำกัด อยู่ที่ไอเดียของคุณ</h3>
+
+        <!-- Button under header -->
+        <div class="button-container">
+            <a href="products.html" class="catalog-button">View Our Products</a>
+        </div>
+    </div>
+
+    <!-- External JavaScript -->
+    <script src="script.js"></script>
+
+    <!-- Make Slide 3 clickable reliably -->
+    <script>
+        const slidesWrapper = document.getElementById('slides-wrapper');
+        slidesWrapper.addEventListener('click', () => {
+            const activeSlide = slidesWrapper.querySelector('img.active');
+            if (activeSlide && activeSlide.alt === 'Slide 3') {
+                window.location.href = 'products.html';
+            }
+        });
+    </script>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-container">
+            <img src="Content/Logo.jpg" alt="Logo" style="height:40px; display:block;">
+            <span class="phone-number">000-000-0000</span>
+        </div>
+    </footer>
+
 </body>
 </html>

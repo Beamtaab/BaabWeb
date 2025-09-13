@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <!-- Google Font: Mitr -->
+  <link href="https://fonts.googleapis.com/css2?family=Mitr:wght@400&display=swap" rel="stylesheet">
+
+  <!-- Font Awesome -->
+  <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+
+  <!-- External CSS -->
+  <link rel="stylesheet" href="style.css">
+
+  <title>Products Page</title>
+
+  <style>
+  /* ===== Products Page Content Only ===== */
+  body.products-page .content {
+    display: flex;
+    gap: 20px;
+    max-width: 1200px;
+    margin: 100px auto 40px auto; /* Reduced top margin (closer to navbar) */
+    flex-wrap: wrap;
+  }
+
+  body.products-page .sidebar {
+    flex: 0 0 30%;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    align-items: flex-start;
+  }
+
+  body.products-page .main-content {
+    flex: 1;
+    border: 1px solid #ccc;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 400px;
+  }
+
+  body.products-page .main-content img {
+    max-width: 100%;
+    height: auto;
+  }
+
+  body.products-page .text-button {
+    background: none;
+    border: none;
+    padding: 0;
+    margin: 0;
+    font-family: 'Mitr', sans-serif;
+    font-size: 16px;
+    color: #092948;
+    cursor: pointer;
+    text-align: left;
+    transition: color 0.3s, text-decoration 0.3s;
+  }
+
+  body.products-page .text-button:hover {
+    color: #7a5c3d;
+  }
+
+  body.products-page .text-button.active {
+    text-decoration: underline;
+    font-weight: bold;
+    color: #7a5c3d;
+  }
+
+  @media (max-width: 768px) {
+    body.products-page .content {
+      flex-direction: column;
+    }
+    body.products-page .sidebar,
+    body.products-page .main-content {
+      width: 100%;
+    }
+  }
+</style>
+
+</head>
+<body class="products-page">
+
+  <!-- Top Bar -->
+  <div class="top-bar">
+      <div class="top-bar-container">
+          <div class="top-bar-left">
+              <span class="phone-number">
+                  <i class="fas fa-phone"></i> 000-000-0000
+              </span>
+              <span class="line-contact">
+                  <img src="Content/line-logo.png" alt="LINE" class="line-logo">
+                  nappassions
+              </span>
+              <span class="email-contact">
+                  <i class="fas fa-envelope"></i> nappassions@gmail.com
+              </span>
+          </div>
+          <div class="top-bar-right">
+              <button class="lang-switch">TH / EN</button>
+          </div>
+      </div>
+  </div>
+
+  <!-- Navbar -->
+  <nav>
+    <div class="nav-container">
+      <img src="Content/Logo.jpg" alt="Logo" style="height:50px;">
+      <div class="nav-links">
+        <a href="index.html">Home</a>
+        <a href="products.html" class="active">Products</a>
+        <a href="catalog.html">Catalog</a>
+        <a href="contact.html">Contact Us</a>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Content -->
+  <div class="content">
+
+    <!-- Sidebar -->
+    <div class="sidebar">
+        <button class="text-button" onclick="showImage(this, 'Content/p1 เข็มกลัดกลม.png')">เข็มกลัดกลม</button>
+        <button class="text-button" onclick="showImage(this, 'Content/p2 เข็มกลัด4เหลี่ยม.png')">เข็มกลัด4เหลี่ยม</button>
+        <button class="text-button" onclick="showImage(this, 'Content/p3 เข็มกลัดวงรี +10ซม.png')">เข็มกลัดวงรี +10ซม</button>
+        <button class="text-button" onclick="showImage(this, 'Content/p4 เหรียญแม่เหล็กหน้าแรก หลังฟ้า.png')">เหรียญแม่เหล็กหน้าแรก หลังฟ้า</button>
+        <button class="text-button" onclick="showImage(this, 'Content/p5 พวงกุญแจเหรียญ.png')">พวงกุญแจเหรียญ</button>
+        <button class="text-button" onclick="showImage(this, 'Content/p6 การ์ดแม่เหล็ก.png')">การ์ดแม่เหล็ก</button>
+        <button class="text-button" onclick="showImage(this, 'Content/p7 ข้อมือยาง.png')">ข้อมือยาง</button>
+        <button class="text-button" onclick="showImage(this, 'Content/p8 ที่รองแก้ว.png')">ที่รองแก้ว</button>
+        <button class="text-button" onclick="showImage(this, 'Content/p9 พวงกุญแจAcrylic.png')">พวงกุญแจAcrylic</button>
+        <button class="text-button" onclick="showImage(this, 'Content/p10 พวงกุญแจยาง.png')">พวงกุญแจยาง</button>
+        <button class="text-button" onclick="showImage(this, 'Content/p11 พวงกุญแจผ้า.png')">พวงกุญแจผ้า</button>
+        <button class="text-button" onclick="showImage(this, 'Content/p12 พวงกุญแจผ้าคล้อง.png')">พวงกุญแจผ้าคล้อง</button>
+    </div>
+
+    <!-- Main image -->
+    <div class="main-content">
+      <img id="mainImage" src="placeholder1.jpg" alt="Product Image">
+    </div>
+
+  </div>
+
+  <!-- Footer -->
+  <footer>
+    <div class="footer-container">
+      <img src="Content/Logo.jpg" alt="Logo" style="height:40px;">
+      <span class="phone-number">000-000-0000</span>
+    </div>
+  </footer>
+
+  <script>
+    function showImage(button, imagePath) {
+        document.getElementById('mainImage').src = imagePath;
+        document.querySelectorAll('.text-button').forEach(btn => btn.classList.remove('active'));
+        button.classList.add('active');
+    }
+
+    // First button active on page load
+    window.onload = function() {
+        const firstButton = document.querySelector('.text-button');
+        if(firstButton) firstButton.click();
+    };
+  </script>
+
+</body>
+</html>
