@@ -49,16 +49,52 @@ body {
   align-items: center;
 }
 
-
-
-/* Top bar icons */
-.top-bar .top-icon {
-  width: 22px;       /* uniform width */
-  height: 22px;      /* uniform height */
-  object-fit: contain; /* preserves aspect ratio */
-  margin-right: 8px;  /* spacing from text */
+/* Phone */
+.top-bar .phone-number {
+  display: flex;
+  align-items: center;
 }
 
+.top-bar .phone-number .top-icon {
+  width: 22px;        /* same size as LINE icon */
+  height: 22px;
+  margin-right: 10px; /* keep previous spacing */
+  object-fit: contain;
+}
+
+/* LINE */
+.top-bar .line-contact {
+  display: flex;
+  align-items: center;
+}
+
+.top-bar .line-contact .top-icon {
+  width: 22px;        /* uniform size */
+  height: 22px;
+  margin-right: 8px;  /* keep previous spacing */
+  object-fit: contain;
+}
+
+/* Email */
+.top-bar .email-contact {
+  display: flex;
+  align-items: center;
+  font-size: 16px;
+  color: white;
+}
+
+.top-bar .email-contact .top-icon {
+  width: 22px;        /* uniform size */
+  height: 22px;
+  margin-right: 10px; /* same spacing as phone */
+  object-fit: contain;
+}
+
+
+.top-bar .email-contact i {
+  margin-right: 8px;
+  font-size: 18px;
+}
 
 /* Language Switch Button */
 .lang-switch {
