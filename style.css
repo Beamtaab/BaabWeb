@@ -18,85 +18,46 @@ body {
   top: 0;
   left: 0;
   width: 100%;
-  height: 60px;              /* fixed height */
+  height: 60px;
   background-color: #092948;
   color: white;
   display: flex;
+  justify-content: center;
   align-items: center;
   z-index: 2000;
 }
 
 .top-bar-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
   width: 100%;
   max-width: 1200px;
-  margin: 0 auto;
   padding: 0 20px;
-  display: flex;
-  justify-content: space-between; /* left group vs right button */
-  align-items: center;
-  height: 100%;
   font-size: 16px;
 }
 
 .top-bar-left {
   display: flex;
   align-items: center;
-  gap: 30px; /* spacing between phone / LINE / email */
+  gap: 30px;
+  flex-wrap: wrap;
 }
 
 .top-bar-right {
   display: flex;
   align-items: center;
+  margin-top: 0;
 }
 
-/* Phone */
-.top-bar .phone-number {
-  display: flex;
-  align-items: center;
-}
-
-.top-bar .phone-number .top-icon {
-  width: 22px;        /* same size as LINE icon */
+.top-bar .top-icon {
+  width: 22px;
   height: 22px;
-  margin-right: 10px; /* keep previous spacing */
   object-fit: contain;
-}
-
-/* LINE */
-.top-bar .line-contact {
-  display: flex;
-  align-items: center;
-}
-
-.top-bar .line-contact .top-icon {
-  width: 22px;        /* uniform size */
-  height: 22px;
-  margin-right: 8px;  /* keep previous spacing */
-  object-fit: contain;
-}
-
-/* Email */
-.top-bar .email-contact {
-  display: flex;
-  align-items: center;
-  font-size: 16px;
-  color: white;
-}
-
-.top-bar .email-contact .top-icon {
-  width: 22px;        /* uniform size */
-  height: 22px;
-  margin-right: 10px; /* same spacing as phone */
-  object-fit: contain;
-}
-
-
-.top-bar .email-contact i {
   margin-right: 8px;
-  font-size: 18px;
 }
 
-/* Language Switch Button */
 .lang-switch {
   background: transparent;
   border: 1px solid white;
@@ -115,41 +76,44 @@ body {
 /* ===== Navbar ===== */
 nav {
   position: fixed;
-  top: 60px; /* push below top bar */
+  top: 60px;
   left: 0;
   width: 100%;
-  height: 100px; /* slightly taller navbar */
   background-color: #f3f0e8;
   display: flex;
   justify-content: center;
   align-items: center;
   z-index: 1000;
-  padding: 0;
+  padding: 5px 0;
 }
 
 .nav-container {
   display: flex;
-  align-items: center;
   justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
   width: 100%;
   max-width: 1200px;
   padding: 0 20px;
 }
 
 .nav-container img {
-  height: 60px;           /* bigger logo */
-  border-radius: 8px;     /* less pointy */
+  height: 60px;
+  border-radius: 8px;
 }
 
 .nav-links {
   display: flex;
-  gap: 35px;              /* slightly more space */
+  gap: 35px;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin-top: 0;
 }
 
 .nav-links a {
   text-decoration: none;
   color: #092948;
-  font-size: 18px;        /* bigger text */
+  font-size: 18px;
   transition: color 0.3s;
 }
 
@@ -161,12 +125,11 @@ nav {
   text-decoration: underline;
 }
 
-/* Adjust content padding below navbar */
+/* ===== Content ===== */
 .content {
-  padding-top: 160px; /* top bar 60px + navbar 100px */
+  padding-top: 160px; /* top bar + navbar */
   margin-bottom: 40px;
 }
-
 
 /* ===== Slideshow ===== */
 .slideshow-container {
@@ -179,7 +142,7 @@ nav {
   position: relative;
   width: 100%;
   overflow: hidden;
-  padding-top: 56.25%; /* 16:9 ratio */
+  padding-top: 56.25%;
 }
 
 .slides-wrapper img {
@@ -257,27 +220,21 @@ h2 {
   margin: 0;
   font-family: 'Mitr', sans-serif;
   font-size: 16px;
-  color: #092948;   /* same as navbar text color */
+  color: #092948;
   cursor: pointer;
   text-align: left;
   transition: color 0.3s, text-decoration 0.3s;
 }
 
-/* Hover effect */
 .text-button:hover {
-  color: #7a5c3d;  /* optional hover color to match navbar hover */
+  color: #7a5c3d;
 }
 
-/* Active button */
 .text-button.active {
   text-decoration: underline;
   font-weight: bold;
-  color: #7a5c3d; /* keep active color consistent with hover */
+  color: #7a5c3d;
 }
-
-
-
-
 
 /* ===== Footer ===== */
 footer {
@@ -306,28 +263,33 @@ footer {
   font-size: 16px;
 }
 
-
 /* ===== Mobile / Tablet ===== */
 @media (max-width: 768px) {
 
   /* Top Bar */
   .top-bar {
-    height: 50px; /* smaller top bar */
+    height: 50px;
   }
 
   .top-bar-container {
-    font-size: 14px;  /* smaller text */
+    font-size: 14px;
     padding: 0 10px;
+    justify-content: center;
   }
 
   .top-bar-left {
-    gap: 15px;       /* reduce spacing between phone/line/email */
+    gap: 10px;
+    justify-content: center;
+  }
+
+  .top-bar-right {
+    margin-top: 5px;
   }
 
   .top-bar .top-icon {
-    width: 18px;     /* smaller icons */
+    width: 18px;
     height: 18px;
-    margin-right: 6px;
+    margin-right: 4px;
   }
 
   .lang-switch {
@@ -337,31 +299,39 @@ footer {
 
   /* Navbar */
   nav {
-    top: 50px;       /* push below smaller top bar */
-    height: 70px;    /* smaller navbar */
+    top: 50px;
+    height: auto;
+  }
+
+  .nav-container {
+    flex-direction: column;
+    padding: 5px 10px;
   }
 
   .nav-container img {
-    height: 40px;    /* smaller logo */
+    height: 40px;
+    margin-bottom: 5px;
   }
 
   .nav-links {
-    gap: 20px;       /* smaller gap between links */
+    gap: 10px;
+    justify-content: center;
+    margin-top: 5px;
   }
 
   .nav-links a {
-    font-size: 14px; /* smaller link text */
+    font-size: 14px;
   }
 
   /* Content */
   .content {
-    padding-top: 120px; /* top bar + navbar total height for mobile */
+    padding-top: 120px; 
     margin-bottom: 20px;
   }
 
   /* Slideshow */
   .slides-wrapper {
-    padding-top: 75%; /* slightly taller ratio for mobile */
+    padding-top: 75%;
   }
 
   .prev, .next {
