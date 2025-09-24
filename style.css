@@ -305,3 +305,96 @@ footer {
 .phone-number {
   font-size: 16px;
 }
+
+
+/* ===== Mobile / Tablet ===== */
+@media (max-width: 768px) {
+
+  /* Top Bar */
+  .top-bar {
+    height: 50px; /* smaller top bar */
+  }
+
+  .top-bar-container {
+    font-size: 14px;  /* smaller text */
+    padding: 0 10px;
+  }
+
+  .top-bar-left {
+    gap: 15px;       /* reduce spacing between phone/line/email */
+  }
+
+  .top-bar .top-icon {
+    width: 18px;     /* smaller icons */
+    height: 18px;
+    margin-right: 6px;
+  }
+
+  .lang-switch {
+    font-size: 12px;
+    padding: 3px 8px;
+  }
+
+  /* Navbar */
+  nav {
+    top: 50px;       /* push below smaller top bar */
+    height: 70px;    /* smaller navbar */
+  }
+
+  .nav-container img {
+    height: 40px;    /* smaller logo */
+  }
+
+  .nav-links {
+    gap: 20px;       /* smaller gap between links */
+  }
+
+  .nav-links a {
+    font-size: 14px; /* smaller link text */
+  }
+
+  /* Content */
+  .content {
+    padding-top: 120px; /* top bar + navbar total height for mobile */
+    margin-bottom: 20px;
+  }
+
+  /* Slideshow */
+  .slides-wrapper {
+    padding-top: 75%; /* slightly taller ratio for mobile */
+  }
+
+  .prev, .next {
+    width: 30px;
+    height: 30px;
+    font-size: 18px;
+    line-height: 30px;
+  }
+
+  /* Sidebar buttons */
+  .text-button {
+    font-size: 14px;
+  }
+
+  /* Catalog button */
+  .catalog-button {
+    font-size: 1.2rem;
+    padding: 10px 30px;
+  }
+
+  /* Footer */
+  .footer-container {
+    flex-direction: column;
+    gap: 10px;
+    text-align: center;
+    padding: 10px;
+  }
+
+  .footer-container img {
+    height: 30px;
+  }
+
+  .phone-number {
+    font-size: 14px;
+  }
+}
