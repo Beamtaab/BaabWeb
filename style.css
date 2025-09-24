@@ -49,41 +49,16 @@ body {
   align-items: center;
 }
 
-/* Phone */
-.top-bar .phone-number {
-  display: flex;
-  align-items: center;
+
+
+/* Top bar icons */
+.top-bar .top-icon {
+  width: 22px;       /* uniform width */
+  height: 22px;      /* uniform height */
+  object-fit: contain; /* preserves aspect ratio */
+  margin-right: 8px;  /* spacing from text */
 }
 
-.top-bar .phone-number i {
-  margin-right: 10px;
-  font-size: 18px;
-}
-
-/* LINE */
-.top-bar .line-contact {
-  display: flex;
-  align-items: center;
-}
-
-.top-bar .line-contact .line-logo {
-  width: 22px;
-  height: 22px;
-  margin-right: 8px;
-}
-
-/* Email */
-.top-bar .email-contact {
-  display: flex;
-  align-items: center;
-  font-size: 16px;
-  color: white;
-}
-
-.top-bar .email-contact i {
-  margin-right: 8px;
-  font-size: 18px;
-}
 
 /* Language Switch Button */
 .lang-switch {
