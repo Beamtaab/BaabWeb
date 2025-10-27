@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Google Font: Mitr -->
+    <link href="https://fonts.googleapis.com/css2?family=Mitr:wght@400&display=swap" rel="stylesheet">
+
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+        integrity="sha512-p1E0k1gQ0o/lZw1U8hUQULKU5/b0dp5Xv1fQnGf0RRKZ3evr6Ih+7Z1Zm+zRhKv2F7p6YvX7+9T2a9kMbfiE8g=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+    <!-- External CSS -->
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <!-- Top Bar -->
+    <div class="top-bar">
+        <div class="top-bar-container">
+            <div class="top-bar-left">
+                <span class="phone-number">
+                    <img src="/Content/phone.png" alt="Phone" class="top-icon"> 090-678-9126
+                </span>
+                <span class="line-contact">
+                    <img src="/Content/line-logo.png" alt="LINE" class="top-icon">
+                    @tvr1495i
+                </span>
+                <span class="email-contact">
+                    <img src="/Content/mail.png" alt="Email" class="top-icon"> nappassions@gmail.com
+                </span>
+            </div>
+            <div class="top-bar-right">
+                <button class="lang-switch">TH / EN</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Navbar -->
+    <nav>
+        <div class="nav-container">
+            <img src="/Content/Logo.jpg" alt="Logo">
+            <div class="nav-links">
+                <a href="/main/" class="active">Home</a>
+                <a href="/products/">Products</a>
+                <a href="/catalog/">Catalog</a>
+                <a href="/contact/">Contact Us</a>
+            </div>
+        </div>
+    </nav>
+
+    <div class="content">
+        <!-- Slideshow -->
+        <div class="slideshow-container">
+            <div class="slides-wrapper" id="slides-wrapper">
+                <img src="Content/slide test 1.jpg" alt="Slide 1" class="active">
+                <img src="Content/slide test 2.jpg" alt="Slide 2">
+                <img src="Content/slide test 3.jpg" alt="Slide 3">
+            </div>
+            <button class="prev">&#10094;</button>
+            <button class="next">&#10095;</button>
+        </div>
+
+        <!-- Header under slideshow -->
+        <h2>ออกแบบ ผลิต จัดส่ง ครบ จบ ที่เดียว</h2>
+        <h3>ข้อจำกัด อยู่ที่ไอเดียของคุณ</h3>
+
+        <!-- Button under header -->
+        <div class="button-container">
+            <a href="#" class="catalog-button" id="view-products-btn">View Our Products</a>
+        </div>
+    </div>
+
+    <!-- External JavaScript -->
+    <script src="script.js"></script>
+
+    <!-- Custom JS for interactivity -->
+    <script>
+        const slidesWrapper = document.getElementById('slides-wrapper');
+
+        // Make slide 3 clickable
+        slidesWrapper.addEventListener('click', () => {
+            const activeSlide = slidesWrapper.querySelector('img.active');
+            if (activeSlide && activeSlide.alt === 'Slide 3') {
+                window.location.href = '/products/';
+            }
+        });
+
+        // Make the "View Our Products" button behave like Slide 3
+        const viewBtn = document.getElementById('view-products-btn');
+        viewBtn.addEventListener('click', (event) => {
+            event.preventDefault();
+            window.location.href = '/products/';
+        });
+    </script>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-container">
+            <img src="/Content/LogoW.png" alt="Logo" style="height:40px; display:block;">
+            <span class="phone-number">090-678-9126</span>
+        </div>
+    </footer>
+
+</body>
+
+</html>
