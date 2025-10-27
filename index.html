@@ -53,7 +53,6 @@
         </div>
     </nav>
 
-
     <div class="content">
         <!-- Slideshow -->
         <div class="slideshow-container">
@@ -72,21 +71,30 @@
 
         <!-- Button under header -->
         <div class="button-container">
-            <a href="products.html" class="catalog-button">View Our Products</a>
+            <a href="#" class="catalog-button" id="view-products-btn">View Our Products</a>
         </div>
     </div>
 
     <!-- External JavaScript -->
     <script src="script.js"></script>
 
-    <!-- Make Slide 3 clickable reliably -->
+    <!-- Custom JS for interactivity -->
     <script>
         const slidesWrapper = document.getElementById('slides-wrapper');
+
+        // Make slide 3 clickable
         slidesWrapper.addEventListener('click', () => {
             const activeSlide = slidesWrapper.querySelector('img.active');
             if (activeSlide && activeSlide.alt === 'Slide 3') {
                 window.location.href = '/products/';
             }
+        });
+
+        // Make the "View Our Products" button behave like Slide 3
+        const viewBtn = document.getElementById('view-products-btn');
+        viewBtn.addEventListener('click', (event) => {
+            event.preventDefault();
+            window.location.href = '/products/';
         });
     </script>
 
